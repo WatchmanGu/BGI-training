@@ -38,7 +38,7 @@ N_length = 0
 GC_number = 0 
 for scaffold_id, scaffold_sequence in dict_scaffolds.items():
     total_length = total_length + len(scaffold_sequence)
-for contig_id, contig_sequence in dict_contigs:
+for contig_id, contig_sequence in dict_contigs.items():
     effective_lenth = effective_lenth + len(contig_sequence)
     for base in contig_sequence:
         if base == "G" or base == "C":

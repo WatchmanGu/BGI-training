@@ -1,10 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "program_files"
-		},
-		{
-			"path": "input_files"
+			"path": "."
 		}
 	],
 	"settings": {
