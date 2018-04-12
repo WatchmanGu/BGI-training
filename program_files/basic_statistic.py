@@ -71,10 +71,12 @@ for scaffold_id in sorted_scaffold_names:
     scaffold_N50_length = scaffold_N50_length + len(dict_scaffolds[scaffold_id])
     if scaffold_N50_length >= total_length/2:
         break
+    scaffold_N50_length = len(dict_scaffolds[scaffold_id])
 for contig_id in sorted_contig_names:
     contig_N50_length = contig_N50_length + len(dict_contigs[contig_id])
     if contig_N50_length >= effective_lenth/2:
         break
+    contig_N50_length = len(dict_contigs[contig_id])
 """
 show results
 save dict_scaffolds & dict_contigs as file
@@ -84,9 +86,11 @@ with open("scaffold_basic_infomation.txt","w") as results_file:
     results = "scaffold.fa" + "\t" + str(total_length) + "\t" + str(effective_lenth) + "\t" + str(N_length) + "\t" + str(scaffold_N50_length) + "\t" + str(contig_N50_length) + "\t" + str(gc_rate) + "\n"
     results_file.write(result_title)
     results_file.write(results)
+"""
 with open("dict_scaffolds.txt","w") as dict_scaffold_file:
     for scaffold_id, scaffold_sequence in dict_scaffolds.items():
         dict_scaffold_file.write(scaffold_id + "\t" + scaffold_sequence + "\n")
 with open("dict_contigs.txt","w") as dict_contigs_file:
     for contig_id, contig_sequence in dict_contigs.items():
-        dict_contigs_file.write(contig_id + "\t" + contig_sequence + "\n")        
+        dict_contigs_file.write(contig_id + "\t" + contig_sequence + "\n")
+"""
