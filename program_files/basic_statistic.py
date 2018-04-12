@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import functools
 """
 build a dictionary of scaffold names with their sequences
  -->dict_scaffolds = {"scaffold_id":"ATCG...",....}
@@ -62,8 +63,8 @@ def contig_length_cmp(contig1,contig2):
     if len(dict_contigs[contig1]) > len(dict_contigs[contig2]):
         return 1
     return 0
-sorted_scaffold_names = sorted(scaffold_names,scaffold_length_cmp)
-sorted_contig_names = sorted(contig_names,contig_length_cmp)
+sorted_scaffold_names = sorted(scaffold_names,key = functools.cmp_to_key(scaffold_length_cmp))
+sorted_contig_names = sorted(contig_names,key = functools.cmp_to_key(contig_length_cmp))
 scaffold_N50_length = 0
 contig_N50_length = 0
 for scaffold_id in sorted_scaffold_names:
