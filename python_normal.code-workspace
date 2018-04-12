@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "program_files"
+		},
+		{
+			"path": "input_files"
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"workbench.activityBar.visible": true,
+		"files.autoSaveDelay": 900000
+	}
+}
