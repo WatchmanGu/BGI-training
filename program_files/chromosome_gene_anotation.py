@@ -6,11 +6,12 @@ dict_scaffold_end_on_chr13 = {}
 with open("chr13.agp") as chr13_agp_file:
     for line in chr13_agp_file:
         agp_fields = line.strip().split('\t')
-        scaffold_id = agp_fields[0]
-        chromosome_beg = agp_fields[1]
-        chromosome_end = agp_fields[2]
-        dict_scaffold_beg_on_chr13[scaffold_id] = chromosome_beg
-        dict_scaffold_end_on_chr13[scaffold_id] = chromosome_end
+        if agp_fields[5] != "100":
+            scaffold_id = agp_fields[5]
+            chromosome_beg = agp_fields[1]
+            chromosome_end = agp_fields[2]
+            dict_scaffold_beg_on_chr13[scaffold_id] = chromosome_beg
+            dict_scaffold_end_on_chr13[scaffold_id] = chromosome_end
 """
 Read the chr13.scaffold.gff file and replace the location field with the location on the chromosome.
 Than output the results as chromosome_gene.gff.

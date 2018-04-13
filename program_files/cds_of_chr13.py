@@ -11,4 +11,7 @@ def sequence_reverse(string):
 Read chromosome_gene.gff file and map the CDS to the chromosome
 Than output as a file, including the gene_id and the sequence
 """
-#with open
+with open("chromosome_gene.gff","r") as chromosome_anotation_file:
+    for line in chromosome_anotation_file:
+        gff_fields = line.strip("\n").split("\t")
+         
