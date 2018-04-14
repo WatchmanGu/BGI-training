@@ -36,10 +36,11 @@ with open("chr13.scaffold.gff") as chr13_scaffold_gff_file:
             scaffold_beg = int(gff_fields[3])
             scaffold_end = int(gff_fields[4])
             chromosome_end = int(dict_scaffold_end_on_chr13[scaffold_id])
-            cds_on_chromosome_beg = chromosome_end + 1 - scaffold_beg
-            cds_on_chromosome_end = chromosome_end + 1 - scaffold_end
+            cds_on_chromosome_beg = chromosome_end + 1 - scaffold_end
+            cds_on_chromosome_end = chromosome_end + 1 - scaffold_beg
             gff_fields[3] = str(cds_on_chromosome_beg)
             gff_fields[4] = str(cds_on_chromosome_end)
+        gff_fields[0] = "Pa13"
         with open("chromosome_gene.gff","a") as chromosome_gene_anotation_file:
             for field in gff_fields:
                 chromosome_gene_anotation_file.write(field)
