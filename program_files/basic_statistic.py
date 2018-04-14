@@ -82,8 +82,10 @@ show results
 save dict_scaffolds & dict_contigs as file
 """
 with open("scaffold_basic_infomation.txt","w") as results_file:
-    result_title = "Name\tTotal Length\tEffective Length\tN Length\tScaffold N50\tContig N50\tGC rate(%)\n"
-    results = "scaffold.fa" + "\t" + str(total_length) + "\t" + str(effective_lenth) + "\t" + str(N_length) + "\t" + str(scaffold_N50_length) + "\t" + str(contig_N50_length) + "\t" + str(gc_rate) + "\n"
+    print("{0:16}{1:16}{2:16}{3:16}{4:16}{5:16}{6:16}\n".format("Name","Total Length","Effective Length","N Length","Scaffold N50","Contig N50","GC rate(%)"))
+    print("{0:16}{1:16}{2:16}{3:16}{4:16}{5:16}{6:16}\n".format("scaffold.fa",str(total_length),str(effective_lenth),str(N_length),str(scaffold_N50_length),str(scaffold_N50_length),str(gc_rate)))
+    result_title = "\t".join(["Name","Total Length","Effective Length","N Length","Scaffold N50","Contig N50","GC rate(%)"]) + "\n"
+    results = "\t".join(["scaffold.fa",str(total_length),str(effective_lenth),str(N_length),str(scaffold_N50_length),str(scaffold_N50_length),str(gc_rate)]) + "\n"
     results_file.write(result_title)
     results_file.write(results)
 """
