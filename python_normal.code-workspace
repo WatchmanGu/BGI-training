@@ -8,6 +8,7 @@
 		"files.autoSave": "afterDelay",
 		"workbench.activityBar.visible": true,
 		"files.autoSaveDelay": 900000,
-		"python.pythonPath": "C:\\Users\\Watchman\\Anaconda3\\python.exe"
+		"python.pythonPath": "C:\\Users\\Watchman\\Anaconda3\\python.exe",
+		"editor.fontSize": 14
 	}
 }

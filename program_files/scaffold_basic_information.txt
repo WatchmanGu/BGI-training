@@ -1,0 +1,2 @@
+Name	Total Length	Effective Length	N Length	Scaffold N50	Contig N50	GC rate(%)
+scaffold.fa	60234540	57638100	2596440	2871036	201075	37.32
