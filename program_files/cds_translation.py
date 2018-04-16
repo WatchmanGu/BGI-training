@@ -22,7 +22,7 @@ with open("cds.fa","r") as cds_file:
     gene_ids = []
     dict_gene_seqs = {}
     for line in cds_file:
-        if line[0] == 0:
+        if line[0] == ">":
             gene_id = line.strip().strip(">")
             if gene_id not in gene_ids:
                 gene_ids.append(gene_id)
